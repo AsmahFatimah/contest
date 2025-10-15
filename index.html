@@ -1,0 +1,277 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Home Page</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /* overflow-x: hidden; */
+        }
+
+        :root {
+            --primary: #222425;
+            --secondary: #0B2347;
+            --tertiary: #FDBA2E;
+        }
+
+        body {
+            background-attachment: fixed;
+            background: url(assets/imgs/AdobeStock_278704152\ 1.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: var(--primary);
+            font-family: Lato;
+        }
+        section{
+            /* height: 100vh; */
+            padding: 3rem 8% 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar .nav-link {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+        .heroSection h1{
+            font-family: Saira;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        .heroSection h2{
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .formDiv{
+            /* width: 100%; */
+        }
+        
+        
+        form {
+            background-color: #ffffff;
+            /* max-width: 400px; */
+            /* width: 400px; */
+            margin: 0 auto;
+        }
+        .selectedDestinationBtns span {
+            background: var(--secondary);
+            color: #ffffff;
+            font-size: .8rem;
+            font-weight: 500;
+            border-radius: 5px;
+            padding: .4rem;
+            margin-right: .2rem;
+        }
+
+        .selectedDestinationBtns .closeBtn {
+            color: #ffffff !important;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .destinationTag {}
+
+        .ageAddBtn {
+            background: var(--tertiary);
+            color: var(--primary);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            font-size: 1.5rem;
+        }
+
+        .age {
+            border: 1px solid #E6E3E0;
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+        }
+
+        .tripBtns .btn:nth-child(1) {
+            background: #ffffff;
+            border-top-left-radius: 7px !important;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+
+        }
+
+        .tripBtns .btn:nth-child(2) {
+            background: var(--tertiary);
+            border-top-right-radius: 7px !important;
+            border-radius: 0;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .formBtn{
+            background: var(--tertiary);
+            color: #000000;
+            border-radius: 7px;
+        }
+        .formBtn .btn{
+            font-weight: 900 !important;
+        }
+        label{
+            font-weight: 700 !important;
+            font-size: 17px;
+        }
+        @media (min-width: 768px) {
+            form{
+                width: 400px;
+            }
+            .form-select, .form-control{
+                /* width: 300px; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/imgs/logo-6.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-semibold" aria-current="page" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Travel Insurance
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="#">Emergency Assistance</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Customer Service
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="heroSection d-flex justify-content-center align-items-center flex-column h-00">
+        <div class="my-3 text-center">
+             <h1>BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE</h6>
+        <h2>Find the Right Plan for You</h2>
+        </div>
+       
+
+        <div class="flex-column d-flex justify-content-center align-items-center formDiv p-4">
+            <div class="tripBtns d-flex w-100">
+                <button class="btn">Single Trip</button>
+                <button class="btn">Multi Trip</button>
+            </div>
+           
+            <form action="" class="p-4">
+                <div class="myInput ">
+                    <label for="travel" class="form-label">Where are you travelling?</label>
+                    <select id="travel" class="form-select" aria-placeholder="Type or choose your destinations">
+                        <option value="">Type or choose your destinations</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">b</option>
+                    </select>
+                    <div class="selectedDestinationBtns pt-2 pb-3 mt-2">
+                        <span class="destinationTag text-center">Austria<button class="closeBtn mx-1"
+                                aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+                        </span>
+
+                        <span class="destinationTag text-center ">Bali (Indonesia)<button class="closeBtn mx-1"
+                                aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+                        </span> 
+                        
+                        <span
+                            class="destinationTag text-center ">Canada<button class="closeBtn mx-1"
+                                aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+                            </span>
+                       
+
+                    </div>
+
+                </div>
+
+                <div class="pb-2">
+                    <label for="leave" class="form-label">When do you leave?</label>
+                    <input id="leave" type="text" class="form-control" placeholder="DD/MM/YYYY">
+                </div>
+
+                <div class="pb-2">
+                    <label for="return" class="form-label">When do you return?</label>
+                    <input id="return" type="text" class="form-control" placeholder="DD/MM/YYYY">
+                </div>
+
+                <div class="pb-3">
+                    <label for="age" class="form-label">Current age of all Travellers?</label>
+                    <div>
+                        <input type="number" name="age" id="age" class="age" class="form-control">
+                        <button class="ageAddBtn">+</button>
+                    </div>
+
+                </div>
+
+                <div class="pb-2">
+                    <input type="text" placeholder="Promo Code " class="form-control">
+                </div>
+                <div class="text-center formBtn">
+                     <button class="btn text-uppercase fw-bolder">get a quote</button>
+                </div>
+               
+
+            </form>
+
+        </div>
+    </section>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/0d437a0576.js" crossorigin="anonymous"></script>
+    <script>
+        let btns = document.querySelectorAll('.destinationTag .closeBtn')
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const tag = btn.closest('.destinationTag');
+                tag.remove()
+            })
+        })
+    </script>
+</body>
+
+</html>
