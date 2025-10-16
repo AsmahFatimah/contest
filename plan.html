@@ -1,125 +1,745 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>Pricing Plan</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            /* overflow-x: hidden; */
-        }
-         :root {
-            --primary: #222425;
-            --secondary: #0B2347;
-            --tertiary: #FDBA2E;
-        }
-        nav{
-            background: var(--secondary);
-        }
-        nav i{
-            color: #ffffff;
-        }
-        nav button{
-            color: #ffffff !important;
-        }
-        .barSection{
-            box-shadow: 0px 0px 20px -8px #00000040;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* overflow-x: hidden; */
+      }
+      :root {
+        --primary: #212529;
+        --secondary: #0b2347;
+        --tertiary: #fdba2e;
+      }
+      body {
+        color: var(--primary);
+      }
 
+      nav {
+        background: var(--secondary);
+      }
+      nav i {
+        color: #ffffff;
+      }
+      nav button {
+        color: #ffffff !important;
+      }
+      .barSection {
+        box-shadow: 0px 0px 20px -8px #00000040;
+      }
+      .barSection .bar .line {
+        background-color: #E2E2E2;
+        height: 2px;
+        width: 96.5%;
+        position: absolute;
+        top: 15%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .step {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+      .circle {
+        background: #ffffff;
+        border: 2px solid #E2E2E2;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+     
+      .barSection .step:nth-of-type(3) .circle {
+        background: #0078D4 !important;
+      }
+      .barSection .step:nth-of-type(4) .circle {
+        border: none;
+        width: 28px;
+      }
+      .fa-plane{
+        color: #0078D4;
+        font-size: 1.4rem;
+      }
+      .circle:is(:hover, :focus){
+        transition: all .2s ease-in-out;
+        transform: scale(1.1);
+      }
+      .progressLine {
+        width: 33%;
+        height: 2px;
+        background: #0078D4;
+        position: absolute;
+        top: 15%;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .card .imgContainer {
+        max-width: 25%;
+        justify-content: center;
+      }
+      .card img {
+        width: 100%;
+        align-items: center;
+      }
+      .planSection .bar{
+        color: #E2E2E2;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .planSection .userValues{
+        color: #636363 !important;
+      }
+      .planSectionBtn{
+        border: 1px solid #0078D4;
+        color: #0078D4;
+        margin-bottom: 1rem;
+        transition: all .2s ease-in;
+      }
+      .planSectionBtn:is(:focus, :hover){
+        background: #0078D4;
+        color: #ffffff;
+      }
+      .planTable {
+        border: 1px solid #DADADA;;
+      }
+      .planTable .col {
+        border-bottom: 1px solid #dadada;
+        /* border-top: 1px solid #DADADA */
+      }
+      .planTable .col:nth-child(2) .card {
+        background: #eeeeee;
+      }
+      .planTable .card {
+        border: none;
+        padding: 1rem;
+        border-radius: 0;
+      }
+      .customIcon{
+        color: #878787;
+        cursor: pointer;
+      }
+      select{
+        border: 1px solid #E2E2E2
+      }
+      .customBg{
+        background: #EEEEEE;
+      }
+      .card-title{
+        font-family: Saira;
+        font-weight: 400;
+        font-size: 1.5rem;
+      }
+      .oldPrice{
+        color: #909395;
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+      .oldPrice span{
+        text-decoration: line-through;
+        text-decoration-color: #909395;
+        
+      }
+      .newPrice{
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .newPrice span{
+        font-size: 1.1rem;
+      }
+      .costHeading{
+        color: #909395;
+        font-size: .9rem;
+      }
+      small{
+        font-size: .8rem;
+      }
+      .card{
+        height: 100%;
+      }
+      .coverTitle{
+        font-family: Saira;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      .benefitLink{
+        color: #0774B3 !important;
+        font-size: .9rem;
+        font-weight: 400;
+      }
+      .btnOne{
+        background: var(--secondary);
+        color: #ffffff;
+        border-radius: 0;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all .2s ease-in;
+      }
+      .btnOne:is(:hover, :focus){
+        background-color: #112e5a;
+        color: #ffffff;
+      }
+      .btnTwo{
+        background: var(--tertiary);
+        color: #ffffff;
+        border-radius: 0;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all .2s ease-in;
+
+      }
+      .btnTwo:is(:hover, :focus){
+        background-color: #f0b537;
+        color: #ffffff;
+      }
+      .customLink{
+        color: var(--secondary);
+        font-weight: 400;
+        font-size: .9rem;
+        cursor: pointer;
+      }
+      .customLink:is(:hover, :focus){
+        color: inherit;
+      }
+      .footerDiv, footer{
+        background: var(--secondary);
+        color: #ffffff ;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      footer a{
+        color: #ffffff !important;
+      }
+     
+      .accordion-item{
+        border: none;
+      }
+      .accordion-body{
+        padding: 1rem 0;
+      }
+      .accordion-button:not(.collapsed)::after,
+      .accordion-button::after{
+        background: none;
+      }
+      .tableSm .col {
+        /* border-width: 1px, 1px, 0px, 1px;
+        border-style: solid;
+        border-color: #DFDFDF; */
+        border: 1px solid #DFDFDF;
+      }
+      .tableSm .col:nth-child(2n) {
+        border-left: none;
+       }
+       .tableSm .col:nth-child(n + 3) {
+        border-top: none;
         }
-        .bar .line{
-            background-color: blue;
-            height: 2px;
-            width: 96.5%;
-            position: absolute;
-            top: 15%;
-            z-index: 1;
-            pointer-events: none;
-            
+        select, .tableSm p{
+            font-size: 13px;
+            font-weight: 400;
         }
-        .step {
-            position: relative;
-            z-index: 2; 
-            text-align: center;
+        .customBorderTop{
+            border-top: 1px solid #DADADA !important;
         }
-        .circle{
-            background: blue;
-            border-radius: 50%;
-            width:30px;
-            height: 30px;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .progressLine{
-            width: 33%;
-            height: 2px;
-            background: red;
-            position: absolute;
-            top: 15%;
-            z-index: 1;
-            pointer-events: none;
-        }
+    
 
 
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-    <div class="container">
+      <div class="container">
         <span>
-            <i class="fa-solid fa-share"></i>
-            <button class="btn">back</button>
+          <i class="fa-solid fa-share"></i>
+          <button class="btn">back</button>
         </span>
         <a class="navbar-brand mx-auto" href="index.html">
-        <img src="assets/imgs/logo-6 (1).png" alt="Logo" class="d-inline-flex">
+          <img
+            src="assets/imgs/logo-6 (1).png"
+            alt="Logo"
+            class="d-inline-flex"
+          />
         </a>
-    </div>
-</nav>
-<section class="barSection">
-    <div class="container p-3 ">
-        <div class=" bar d-flex justify-content-between align-items-center  position-relative">
+      </div>
+    </nav>
+    <section class="barSection">
+      <div class="container p-3">
+        <div
+          class="bar d-flex justify-content-between align-items-center position-relative mt-3"
+        >
+          <div class="line"></div>
+          <div class="progressLine"></div>
 
-        <div class="line"></div>
-        <div class="progressLine"></div>
-
-        <div class="step ">
-            <div class="circle "><i class="fa-solid fa-check"></i></div>
+          <div class="step">
+            <div class="circle"><i class="fa-solid fa-check"></i></div>
             <p>step1</p>
-        </div>
+          </div>
 
-        <div class="step ">
-            <div class="circle "><i class="fa-solid fa-check"></i></div>
+          <div class="step">
+            <div class="circle"><i class="fa-solid fa-plane"></i></div>
             <p>step 2</p>
-        </div>
+          </div>
 
-        <div class="step ">
-            <div class="circle "><i class="fa-solid fa-check"></i></div>
+          <div class="step">
+            <div class="circle"></div>
             <p>step 3</p>
-        </div>
+          </div>
 
-        <div class="step ">
-            <div class="circle "><i class="fa-solid fa-check"></i></div>
+          <div class="step">
+            <div class="circle"></div>
             <p>step 4</p>
+          </div>
         </div>
-        
+      </div>
+    </section>
+
+    <section class="planSection p-2 p-lg-5">
+      <div class="container">
+        <div
+          class="row row-cols-1 row-cols-lg-auto align-items-lg-center justify-content-lg-between "
+        >
+        <div class="col-7 d-lg-none">
+            <h1>Trip Details</h1>
+        </div>
+        <div class="col-5 col-lg order-lg-5">
+            <button class="btn text-capitalize planSectionBtn">edit</button>
+        </div>
+          <div class="col-lg-3 col">
+            <div class="d-flex gap-1">
+              <p class="fw-semibold">Destination(s):</p>
+              <p class="userValues">Australia</p>
+            </div>
+          </div>
+
+          <div class="bar d-none d-lg-flex">|</div>
+
+          <div class="col-lg-3 col">
+            <div class="d-flex gap-1">
+              <p class="fw-semibold">Dates:</p>
+              <p class="userValues">04/11/2025 - 13/11/2025</p>
+            </div>
+          </div>
+
+          <div class="bar d-none d-lg-flex">|</div>
+
+          <div class="col-lg-3 col">
+            <div class="d-flex gap-1">
+              <p class="fw-semibold">Traveller Ages:</p>
+              <p class="userValues">23</p>
+            </div>
+          </div>
+
+          <!-- <div class="col">
+            <button class="btn text-capitalize planSectionBtn">edit</button>
+          </div> -->
+        </div>
+
+        <!-- medium screens plan  -->
+        <div class="accordion d-lg-none" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        VOYAGER $15.98
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show"  data-bs-parent="#accordionExample">
+      <div class="accordion-body border-0   ">
+        <div class="card p-1 h-auto" >
+              <div class="imgContainer mx-auto mt-4">
+                <img
+                  src="assets/imgs/Background.png"
+                  class="card-img-top"
+                  alt=""
+                />
+              </div>
+              <div
+                class="card-body d-flex align-items-center flex-column"
+              >
+                <h5 class="card-title">VOYAGER</h5>
+                <p class="card-text oldPrice mt-0 mb-0">From <span>$17.37</span></p>
+                <p class="card-text newPrice mt-0 mb-0">$15<span>.98</span></p>
+                <p class="card-text mt-0 mb-0 costHeading">Total Cost</p>
+                <small class="card-text text-secondary mt-1">
+                  Policy benefits listed below, per traveller limits apply
+                </small>
+                <div class="row row-cols-2 tableSm mt-3 ">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <p class="my-1">
+                            Cancellation or trip interruption
+                            <span class="customIcon"><i class="ri-information-line"></i></span>
+                        </p>
+                    </div>
+                     <div class="col d-flex justify-content-center align-items-center">
+                       <div class="text-center">
+                            <select name="" id="" class="px-4 py-1">
+                                <option value="">$4,000</option>
+                                <option value="">$3,000</option>
+                                <option value="">$3,000</option>
+                            </select>
+                        </div>
+                    </div>
+                     <div class="col">
+                        <p class="my-1">
+                            Luggage and personal effects    
+                            <span class="customIcon"><i class="ri-information-line"></i></span>
+                        </p>
+                    </div>
+                    <div class="col">
+                       <div class="text-center">
+                            <select name="" id="" class="px-4 py-1">
+                                <option value="">$1,000</option>
+                                <option value="">$3,000</option>
+                                <option value="">$3,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="col">
+                        <p class="my-1">
+                            Travel Delay    
+                            <span class="customIcon"><i class="ri-information-line"></i></span>
+                        </p>
+                    </div>
+
+                    <div class="col ">
+                        <p class=" text-center ">
+                        $1,000
+                        </p>
+                    </div>
+
+                     <div class="col">
+                        <p class="my-1">
+                            Personal Liability    
+                            <span class="customIcon"><i class="ri-information-line"></i></span>
+                        </p>
+                    </div>
+
+                     <div class="col">
+                        <p class=" text-center ">
+                        $2,500,000
+                        </p>
+                    </div>
+
+                    <div class="col-12 mt-3">
+                         <p class="coverTitle fw-semibold">
+                            Optional Cover    
+                        </p>
+                    </div>
+
+                    <div class="col border-0 customBorderTop">
+                        <p class="my-1">
+                            Rental Vehicle Excess    
+                            <span class="customIcon"><i class="ri-information-line"></i></span>
+                        </p>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center border-0 customBorderTop">
+                       <div class="text-center border-0">
+                            <select name="" id="" class="px-3 py-1">
+                                <option value="">Not Selected</option>
+                                <option value="">$3,000</option>
+                                <option value="">$3,000</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 border-0   text-center mt-3">
+                        <button class="btn btnOne">CHOOSE PLAN</button>
+                    </div>
+
+                    <div class="col-12 text-center border-0 my-3">
+                        <a class="customLink">View Policy Information</a>
+                    </div>
+
+                     <div class="col-12 text-center border-0 ">
+                        <a href="" class="mx-2 benefitLink">Show All Benefits</a>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+ 
+</div>
+
+        <!-- large screens plan -->
+        <div class="row d-none d-md-flex row-cols-md-3 g-0 planTable">
+          <div class="col"></div>
+
+          <div class="col">
+            <div class="card">
+              <div class="imgContainer mx-auto mt-4">
+                <img
+                  src="assets/imgs/Background.png"
+                  class="card-img-top"
+                  alt=""
+                />
+              </div>
+              <div
+                class="card-body d-flex justify-content-center align-items-center flex-column"
+              >
+                <h5 class="card-title">VOYAGER</h5>
+                <p class="card-text oldPrice mt-0 mb-0">From <span>$17.37</span></p>
+                <p class="card-text newPrice mt-0 mb-0">$15<span>.98</span></p>
+                <p class="card-text mt-0 mb-0 costHeading">Total Cost</p>
+                <small class="card-text text-secondary mt-1">
+                  Policy benefits listed below, per traveller limits apply
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+             <div class="card">
+              <div class="imgContainer mx-auto mt-4">
+                <img
+                  src="assets/imgs/Background (1).png"
+                  class="card-img-top"
+                  alt=""
+                />
+              </div>
+              <div
+                class="card-body d-flex justify-content-center align-items-center flex-column"
+              >
+                <h5 class="card-title">VOYAGER</h5>
+                <p class="card-text oldPrice mt-0 mb-0">From <span>$44.94</span></p>
+                <p class="card-text newPrice mt-0 mb-0">$41<span>.34</span></p>
+                <p class="card-text mt-0 mb-0 costHeading">Total Cost</p>
+                <small class="card-text text-secondary mt-1">
+                  Policy benefits listed below, per traveller limits apply
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mt-3">
+            <p class="mx-2">
+              Cancellation or trip interruption
+              <span class="customIcon"><i class="ri-information-line"></i></span>
+            </p>
+          </div>
+
+          <div class="col mt-3">
+            <p class=" text-center px-4 py-1">
+              $1,000
+            </p>
+          </div>
+
+          <div class="col mt-3">
+            <div class="text-center">
+                <select name="" id="" class="px-4 py-1">
+                    <option value="">$4,000</option>
+                    <option value="">$3,000</option>
+                    <option value="">$3,000</option>
+                </select>
+            </div>
+            
+          </div>
+
+          <!-- 3rd row -->
+
+          <div class="col mt-3">
+            <p class="mx-2">
+              Luggage and personal effects
+              <span class="customIcon"><i class="ri-information-line"></i></span>
+            </p>
+          </div>
+
+          <div class="col mt-3">
+            <p class=" text-center px-4 py-1">
+              $500
+            </p>
+          </div>
+
+          <div class="col mt-3">
+            <div class="text-center">
+                <select name="" id="" class="px-4 py-1">
+                    <option value="">$1,000</option>
+                    <option value="">$3,000</option>
+                    <option value="">$3,000</option>
+                </select>
+            </div>
+            
+          </div>
+
+          <!-- 4th row -->
+
+          <div class="col mt-3">
+            <p class="mx-2">
+              Travel Delay
+              <span class="customIcon"><i class="ri-information-line"></i></span>
+            </p>
+          </div>
+
+          <div class="col customBg">
+            <p class=" text-center  mt-3 px-4 py-1">
+              not available
+            </p>
+          </div>
+
+          <div class="col mt-3">
+            <p class=" text-center px-4 py-1">
+              $1,000
+            </p>
+          </div>
+
+          <!-- 5th row -->
+          <div class="col mt-3 border-bottom-0">
+            <p class="mx-2">
+              Personal Liability
+              <span class="customIcon"><i class="ri-information-line"></i></span>
+            </p>
+          </div>
+
+          <div class="col border-bottom-0 customBg">
+            <p class=" text-center mt-3 px-4 py-1">
+              not available
+            </p>
+          </div>
+
+          <div class="col mt-3 border-bottom-0">
+            <p class=" text-center px-4 py-1">
+              $2,500,000
+            </p>
+          </div>
+
+          <!-- 6th row -->
+           <div class="col mt-3 col-md-12">
+                <p class="mx-2 coverTitle">
+                Optional Cover
+                </p>
+            </div>
+ 
+        <!-- 7th row -->
+         <div class="col mt-3  border-bottom-0">
+            <p class="mx-2">
+              Rental Vehicle Excess
+              <span class="customIcon"><i class="ri-information-line"></i></span>
+            </p>
+          </div>
+
+          <div class="col mt-3  border-bottom-0">
+            <p class=" text-center px-4 py-1">
+              not available
+            </p>
+          </div>
+
+          <div class="col mt-3 border-bottom-0">
+            <div class="text-center">
+                <select name="" id="" class="px-4 py-1">
+                    <option value="">Not Selected</option>
+                    <option value="">$3,000</option>
+                    <option value="">$3,000</option>
+                </select>
+            </div>
+            
+          </div>
+
+          <!-- 8th row -->
+
+          <div class="col border-bottom-0 mt-4">
+            <a href="" class="mx-2 benefitLink">Show All Benefits</a>
+          </div>
+
+          <div class="col text-center border-bottom-0 mt-2">
+            <button class="btn btnOne">CHOOSE PLAN</button>
+          </div>
+
+          <div class="col text-center border-bottom-0 mt-2">
+            <button class="btn btnTwo">CHOOSE PLAN</button>
+          </div>
+
+          <!-- 9th row -->
+
+          <div class="col border-bottom-0">
+            <!-- <a href="" class="mx-2">Show All Benefits</a> -->
+          </div>
+
+          <div class="col text-center border-bottom-0 my-3">
+            <a class="customLink">View Policy Information</a>
+          </div>
+
+          <div class="col text-center border-bottom-0 my-3">
+            <a class="customLink">View Policy Information</a>
+          </div>
+
+      </div>
+    </section>
+
+    <footer>
+         <div class="container">
+            <div class="d-flex flex-wrap justify-content-md-between align-items-center py-4 flex-column-reverse flex-md-row" >
+        <div class="col-md-4 col-12 d-flex align-items-center justify-content-center">
+        <p class="mb-3 me-2 mb-md-0">©2025 Logo Ipsum. All Rights Reserved.
+        </p>
+        </div>
+
+        <ul class="nav col-md-4 col-12 justify-content-md-end justify-content-center  list-unstyled d-flex">
+        <li class="ms-3"><a class="text-decoration-none"  href="#">Privacy Policy</a></li>
+        <span class="bar ms-3">|</span></a>
+        <li class="ms-3"><a class="text-decoration-none" href="#">Terms & Conditions</a></li>
+        </ul>
     </div>
     </div>
+    </footer> 
+   
 
-</section>
+<!-- <div class=" footerDiv">
+  <footer class="container py-5">
+    
+
+    <div class="d-flex justify-content-between py-4 my-4 border-top">
+      <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+         <li class="ms-3"><a class="text-decoration-none"  href="#">Privacy Policy</a></li>
+        <span class="bar ms-3">|</span></a>
+        <li class="ms-3"><a class="text-decoration-none" href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+</div> -->
 
 
-
-<script src="bootstrap/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/0d437a0576.js" crossorigin="anonymous"></script>
-</body>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0d437a0576.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
