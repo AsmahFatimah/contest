@@ -41,6 +41,15 @@
             justify-content: center;
             align-items: center;
         }
+        .form-select::placeholder,
+        .form-control::placeholder,
+        select{
+            font-family: Saira !important;
+            color: #757575 !important;
+            font-size: .9rem;
+        }
+
+        
         .navbar .nav-link {
             color: var(--primary);
             font-weight: 700;
@@ -68,7 +77,51 @@
             /* max-width: 400px; */
             /* width: 400px; */
             margin: 0 auto;
+            box-shadow: 0px 0px 38px -19px #0000008A;
+            border-radius: 8px;
+            border-top-left-radius: 0;
         }
+        .selectWrapper{
+            position: relative;
+        }
+       
+        .bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar .line {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background-color: blue;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.step {
+  position: relative;
+  z-index: 2; /* ensures steps stay above the line */
+  text-align: center;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+  font-size: 14px;
+}
+
         .selectedDestinationBtns span {
             background: var(--secondary);
             color: #ffffff;
@@ -104,14 +157,14 @@
             height: 50px;
             border-radius: 6px;
         }
-
+       
         .tripBtns .btn:nth-child(1) {
             background: #ffffff;
             border-top-left-radius: 7px !important;
             border-radius: 0;
             font-size: 14px;
             font-weight: 700;
-
+            z-index: 2;
         }
 
         .tripBtns .btn:nth-child(2) {
@@ -120,6 +173,7 @@
             border-radius: 0;
             font-size: 14px;
             font-weight: 700;
+            z-index: 2;
         }
         .formBtn{
             background: var(--tertiary);
@@ -155,10 +209,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto ">
 
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown me-lg-4">
                         <a class="nav-link dropdown-toggle fw-semibold" aria-current="page" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Travel Insurance
@@ -170,14 +224,16 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-lg-4">
                         <a class="nav-link fw-bold" href="#">Emergency Assistance</a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown me-lg-4">
                         <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Customer Service
+                            <i class="fa-solid fa-angle-down"></i>
+
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -205,8 +261,11 @@
             <form action="" class="p-4">
                 <div class="myInput ">
                     <label for="travel" class="form-label">Where are you travelling?</label>
-                    <select id="travel" class="form-select" aria-placeholder="Type or choose your destinations">
-                        <option value="">Type or choose your destinations</option>
+                    <div class="selectWrapper">
+
+                    </div>
+                    <select id="travel" class="form-select" data-placeholder="Type or choose your destinations">
+                        <option value="" disabled selected  class="customPlaceholder">Type or choose your destinations</option>
                         <option value="a">a</option>
                         <option value="b">b</option>
                         <option value="c">b</option>
@@ -261,6 +320,31 @@
 
         </div>
     </section>
+    <section class="container p-3">
+  <div class="bar d-flex justify-content-between align-items-center position-relative">
+    
+    <!-- The line goes first (behind steps) -->
+    <div class="line"></div>
+
+    <!-- Steps -->
+    <div class="step position-relative">
+      <div class="circle"><i class="fa-solid fa-check"></i></div>
+      <p>Step 1</p>
+    </div>
+
+    <div class="step position-relative">
+      <div class="circle"><i class="fa-solid fa-check"></i></div>
+      <p>Step 2</p>
+    </div>
+
+    <div class="step position-relative">
+      <div class="circle"><i class="fa-solid fa-check"></i></div>
+      <p>Step 3</p>
+    </div>
+
+  </div>
+</section>
+
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/0d437a0576.js" crossorigin="anonymous"></script>
     <script>
