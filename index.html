@@ -28,15 +28,19 @@
         body {
             background-attachment: fixed;
             background: url(assets/imgs/AdobeStock_278704152\ 1.png);
+            /* background-position:center; */
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             color: var(--primary);
             font-family: Lato;
+             /* padding-top: 90px;  */
+             /* Space at top to push text down */
+  /* padding-bottom: 100px; */
         }
         section{
             /* height: 100vh; */
-            padding: 3rem 8% 0;
+            padding: 3rem 0 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -158,6 +162,22 @@
                 /* width: 300px; */
             }
         }
+        @media (max-width: 400px) {
+            body{
+                background-position:87% 50%;
+
+            }
+            section{
+                padding: 2rem 0 0;
+
+            }
+           .heroSection h1{
+                font-size: .9rem;
+            }
+            .heroSection h2{
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -209,9 +229,9 @@
         </div>
     </nav>
     <section class="heroSection d-flex justify-content-center align-items-center flex-column h-00">
-        <div class="my-3 text-center">
+        <div class="my-3 mx-1 mx-md-0 text-center">
              <h1>BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE</h6>
-        <h2>Find the Right Plan for You</h2>
+        <h2 class="fw-bolder">Find the Right Plan for You</h2>
         </div>
        
 
