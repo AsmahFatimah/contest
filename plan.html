@@ -178,7 +178,7 @@
         font-weight: 700;
         font-size: 2.2rem;
       }
-      .newPrice:nth-child(3){
+      .highlightedPrice{
         color: var(--tertiary) !important;
       }
       .newPrice span{
@@ -261,6 +261,9 @@
       .accordion-button:not(.collapsed)::after,
       .accordion-button::after{
         background: none;
+      }
+      .accordion-button:focus{
+        box-shadow: none;
       }
       .tableSm .col {
         /* border-width: 1px, 1px, 0px, 1px;
@@ -547,7 +550,7 @@
               >
                 <h5 class="card-title">VOYAGER PlUS</h5>
                 <p class="card-text oldPrice mt-0 mb-0">From <span>$44.94</span></p>
-                <p class="card-text newPrice mt-0 mb-0">$41<span>.34</span></p>
+                <p class="card-text newPrice mt-0 mb-0 highlightedPrice">$41<span>.34</span></p>
                 <p class="card-text mt-0 mb-0 costHeading">Total Cost</p>
                 <small class="card-text text-secondary mt-1">
                   Policy benefits listed below, per traveller limits apply
@@ -654,7 +657,7 @@
 </div>
 
         <!-- large screens plan -->
-        <div class="row d-none d-md-flex row-cols-md-3 g-0 planTable">
+        <div class="row d-none d-lg-flex row-cols-md-3 g-0 planTable">
           <div class="col"></div>
 
           <div class="col">
@@ -694,7 +697,7 @@
               >
                 <h5 class="card-title">VOYAGER</h5>
                 <p class="card-text oldPrice mt-0 mb-0">From <span>$44.94</span></p>
-                <p class="card-text newPrice mt-0 mb-0">$41<span>.34</span></p>
+                <p class="card-text newPrice highlightedPrice mt-0 mb-0">$41<span>.34</span></p>
                 <p class="card-text mt-0 mb-0 costHeading">Total Cost</p>
                 <small class="card-text text-secondary mt-1">
                   Policy benefits listed below, per traveller limits apply
@@ -859,13 +862,13 @@
 
     <footer>
          <div class="container">
-            <div class="d-flex flex-wrap justify-content-md-between align-items-center py-4 flex-column-reverse flex-md-row" >
-        <div class="col-md-4 col-12 d-flex align-items-center justify-content-center">
+            <div class="d-flex flex-wrap justify-content-lg-between align-items-center py-4 flex-column-reverse flex-lg-row" >
+        <div class="col-lg-4 col-12 d-flex align-items-center justify-content-center">
         <p class="mb-3 me-2 mb-md-0">©2025 Logo Ipsum. All Rights Reserved.
         </p>
         </div>
 
-        <ul class="nav col-md-4 col-12 justify-content-md-end justify-content-center  list-unstyled d-flex">
+        <ul class="nav col-lg-4 col-12 justify-content-lg-end justify-content-center  list-unstyled d-flex">
         <li class="ms-3"><a class="text-decoration-none"  href="#">Privacy Policy</a></li>
         <span class="bar ms-3">|</span></a>
         <li class="ms-3"><a class="text-decoration-none" href="#">Terms & Conditions</a></li>

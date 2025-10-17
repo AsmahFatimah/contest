@@ -34,9 +34,12 @@
             background-repeat: no-repeat;
             color: var(--primary);
             font-family: Lato;
-             /* padding-top: 90px;  */
-             /* Space at top to push text down */
-  /* padding-bottom: 100px; */
+        }
+        .navbar-toggler{
+            border: none;
+        }
+        .navbar-toggler:focus{
+            box-shadow: none;
         }
         section{
             /* height: 100vh; */
@@ -53,11 +56,23 @@
             font-size: .9rem;
         }
 
+        .form-control:focus,
+        .form-select:focus,
+        .age:focus  {
+            box-shadow: none;
+            border: 1px solid var(--tertiary);
+        }
+        .form-select:focus{
+            border: 1px solid var(--tertiary) !important;
+
+        }
+
         
         .navbar .nav-link {
             color: var(--primary);
             font-weight: 700;
         }
+       
 
         .dropdown-toggle::after {
             display: none !important;
@@ -106,8 +121,11 @@
             box-shadow: none;
         }
 
-        .destinationTag {}
-
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
         .ageAddBtn {
             background: var(--tertiary);
             color: var(--primary);
@@ -177,6 +195,13 @@
             .heroSection h2{
                 font-size: 1.5rem;
             }
+           
+        }
+        @media (min-width:401px) and (max-width: 650px){
+             body{
+                background-position:70% 50%;
+
+            }
         }
     </style>
 </head>
@@ -192,7 +217,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto ">
+                <ul class="navbar-nav ms-auto text-end">
 
 
                     <li class="nav-item dropdown me-lg-4">
@@ -229,19 +254,19 @@
         </div>
     </nav>
     <section class="heroSection d-flex justify-content-center align-items-center flex-column h-00">
-        <div class="my-3 mx-1 mx-md-0 text-center">
+        <div class="my-1 my-md-3 mx-1 mx-md-0 text-center">
              <h1>BREAKING THE LIMITS OF TRADITIONAL TRAVEL INSURANCE</h6>
         <h2 class="fw-bolder">Find the Right Plan for You</h2>
         </div>
        
 
-        <div class="flex-column d-flex justify-content-center align-items-center formDiv p-4">
+        <div class="flex-column d-flex justify-content-center align-items-center formDiv p-2 p-md-4">
             <div class="tripBtns d-flex w-100">
                 <button class="btn">Single Trip</button>
                 <button class="btn">Multi Trip</button>
             </div>
            
-            <form action="" class="p-4">
+            <form action="" class="p-2 p-sm-4">
                 <div class="myInput ">
                     <label for="travel" class="form-label">Where are you travelling?</label>
                     <div class="selectWrapper">
